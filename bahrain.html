@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hidden Manama — Ataraxia</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Segoe UI', sans-serif; color: #222; background: #fff; }
+
+    nav {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 18px 40px; border-bottom: 1px solid #e8e8e8;
+      background: #fff; position: sticky; top: 0; z-index: 100;
+    }
+    .nav-logo { font-size: 22px; font-weight: 700; color: #3d8a5a; letter-spacing: 2px; text-decoration: none; }
+    .nav-links { display: flex; gap: 28px; }
+    .nav-links a { font-size: 13px; color: #555; text-decoration: none; }
+    .nav-links a:hover { color: #3d8a5a; }
+
+    .hero { background: #1a4a5a; padding: 72px 40px; text-align: center; }
+    .hero-label { font-size: 11px; letter-spacing: 3px; color: #a0c8d8; text-transform: uppercase; margin-bottom: 12px; }
+    .hero h1 { font-size: 42px; font-weight: 700; color: #fff; margin-bottom: 12px; }
+    .hero p { font-size: 15px; color: #a0c8d8; max-width: 520px; margin: 0 auto; line-height: 1.7; }
+
+    .breadcrumb { padding: 14px 40px; font-size: 12px; color: #aaa; border-bottom: 1px solid #e8e8e8; }
+    .breadcrumb a { color: #3d8a5a; text-decoration: none; }
+    .breadcrumb span { margin: 0 6px; }
+
+    .page-intro { padding: 40px 40px 24px; }
+    .page-intro p { font-size: 15px; color: #555; line-height: 1.8; max-width: 680px; }
+
+    /* ACCORDION */
+    .accordion { padding: 0 40px 48px; }
+
+    .acc-item { border: 1px solid #e8e8e8; border-radius: 12px; margin-bottom: 12px; overflow: hidden; }
+
+    .acc-header {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 18px 22px; cursor: pointer; background: #fff;
+      transition: background 0.2s;
+    }
+    .acc-header:hover { background: #f7faf8; }
+
+    .acc-header-left { display: flex; align-items: center; gap: 14px; }
+    .acc-icon {
+      width: 38px; height: 38px; border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 18px; flex-shrink: 0;
+    }
+    .icon-forts    { background: #f0ebe0; }
+    .icon-nature   { background: #e0f0e8; }
+    .icon-crafts   { background: #f0e8e0; }
+    .icon-adventure{ background: #e0eaf8; }
+    .icon-food     { background: #faf0e0; }
+
+    .acc-title { font-size: 16px; font-weight: 600; color: #222; }
+    .acc-subtitle { font-size: 12px; color: #888; margin-top: 2px; }
+
+    .acc-arrow {
+      font-size: 18px; color: #3d8a5a;
+      transition: transform 0.3s;
+      display: inline-block;
+    }
+    .acc-item.open .acc-arrow { transform: rotate(180deg); }
+
+    .acc-body {
+      display: none;
+      padding: 0 22px 22px;
+      border-top: 1px solid #e8e8e8;
+    }
+    .acc-item.open .acc-body { display: block; }
+
+    /* CARDS INSIDE ACCORDION */
+    .spots { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin-top: 18px; }
+    .spot-card { border: 1px solid #e8e8e8; border-radius: 10px; padding: 16px; background: #fafafa; }
+    .spot-card h3 { font-size: 14px; font-weight: 600; margin-bottom: 6px; color: #222; }
+    .spot-card p { font-size: 12px; color: #666; line-height: 1.6; }
+    .spot-tip { margin-top: 10px; font-size: 11px; color: #3d8a5a; border-left: 2px solid #3d8a5a; padding-left: 8px; line-height: 1.5; }
+
+    /* FOOD CARDS */
+    .food-card { border: 1px solid #cce5d6; border-radius: 10px; padding: 16px; background: #f7faf8; }
+    .food-card h3 { font-size: 15px; font-weight: 600; color: #1a4a2a; margin-bottom: 3px; }
+    .food-card .arabic { font-size: 12px; color: #3d8a5a; margin-bottom: 8px; }
+    .food-card p { font-size: 12px; color: #555; line-height: 1.6; }
+
+    .back-section { padding: 8px 40px 40px; }
+    .back-btn {
+      display: inline-block; padding: 11px 24px;
+      border: 1.5px solid #3d8a5a; color: #3d8a5a;
+      font-size: 13px; border-radius: 30px; text-decoration: none;
+    }
+    .back-btn:hover { background: #f2f8f4; }
+
+    footer { text-align: center; padding: 28px 40px; border-top: 1px solid #e8e8e8; background: #fafafa; }
+    .social-links { display: flex; justify-content: center; gap: 24px; margin-bottom: 10px; }
+    .social-links a { font-size: 13px; color: #3d8a5a; text-decoration: none; }
+    footer p { font-size: 11px; color: #aaa; }
+
+    @media (max-width: 600px) {
+      nav { padding: 16px 20px; }
+      .hero { padding: 52px 20px; }
+      .hero h1 { font-size: 28px; }
+      .breadcrumb, .page-intro, .accordion, .back-section { padding-left: 20px; padding-right: 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a class="nav-logo" href="index.html">ATARAXIA</a>
+    <div class="nav-links">
+      <a href="index.html#destinations">destinations</a>
+      <a href="index.html#featured">guides</a>
+      <a href="index.html#about">about</a>
+    </div>
+  </nav>
+
+  <div class="hero">
+    <p class="hero-label">Bahrain</p>
+    <h1>Hidden Manama</h1>
+    <p>Beyond the malls and the skyline — the Bahrain that locals actually love.</p>
+  </div>
+
+  <div class="breadcrumb">
+    <a href="index.html">Home</a><span>›</span>
+    <a href="index.html#destinations">Destinations</a><span>›</span>
+    Hidden Manama
+  </div>
+
+  <div class="page-intro">
+    <p>Bahrain is one of the most historically rich countries in the Gulf — and most of it sits quietly, waiting to be discovered. Tap each category to explore.</p>
+  </div>
+
+  <div class="accordion">
+
+    <!-- FORTS -->
+    <div class="acc-item">
+      <div class="acc-header" onclick="toggle(this)">
+        <div class="acc-header-left">
+          <div class="acc-icon icon-forts">🏰</div>
+          <div>
+            <div class="acc-title">Forts</div>
+            <div class="acc-subtitle">Ancient fortresses & UNESCO heritage</div>
+          </div>
+        </div>
+        <span class="acc-arrow">&#8964;</span>
+      </div>
+      <div class="acc-body">
+        <div class="spots">
+          <div class="spot-card">
+            <h3>Bahrain Fort (Qal'at al-Bahrain)</h3>
+            <p>A UNESCO World Heritage Site and one of the oldest forts in the Gulf. Layers of civilisation dating back 4,000 years.</p>
+            <p class="spot-tip">Go at golden hour — the light over the sea is unreal.</p>
+          </div>
+          <div class="spot-card">
+            <h3>Arad Fort</h3>
+            <p>A beautifully restored Portuguese-era fort in Muharraq. Small but atmospheric, especially at dusk with the water behind it.</p>
+            <p class="spot-tip">Combine with a walk along the Muharraq corniche.</p>
+          </div>
+          <div class="spot-card">
+            <h3>Riffa Fort</h3>
+            <p>Perched on a cliff overlooking Hunanaiya Valley, this fort was once home to Bahraini rulers. Stunning views and rich history.</p>
+            <p class="spot-tip">Less crowded than Bahrain Fort — a hidden gem.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- NATURE -->
+    <div class="acc-item">
+      <div class="acc-header" onclick="toggle(this)">
+        <div class="acc-header-left">
+          <div class="acc-icon icon-nature">🌳</div>
+          <div>
+            <div class="acc-title">Nature</div>
+            <div class="acc-subtitle">Desert wonders & natural landmarks</div>
+          </div>
+        </div>
+        <span class="acc-arrow">&#8964;</span>
+      </div>
+      <div class="acc-body">
+        <div class="spots">
+          <div class="spot-card">
+            <h3>Tree of Life</h3>
+            <p>A 400-year-old mesquite tree standing alone in the middle of the desert — no water source, no explanation. One of Bahrain's most mystical spots.</p>
+            <p class="spot-tip">Best visited at sunset or under a full moon.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CRAFTS -->
+    <div class="acc-item">
+      <div class="acc-header" onclick="toggle(this)">
+        <div class="acc-header-left">
+          <div class="acc-icon icon-crafts">🏺</div>
+          <div>
+            <div class="acc-title">Crafts</div>
+            <div class="acc-subtitle">Pottery, weaving & traditional arts</div>
+          </div>
+        </div>
+        <span class="acc-arrow">&#8964;</span>
+      </div>
+      <div class="acc-body">
+        <div class="spots">
+          <div class="spot-card">
+            <h3>Pottery Village — A'ali</h3>
+            <p>The oldest continuously working pottery village in the Gulf. Watch local craftsmen shape clay the same way their ancestors did centuries ago.</p>
+            <p class="spot-tip">You can try making your own piece at some workshops.</p>
+          </div>
+          <div class="spot-card">
+            <h3>Traditional Sewing & Talli</h3>
+            <p>Talli is Bahrain's ancient embroidery art — intricate metallic thread woven by hand. Look for workshops in Muharraq's old quarter.</p>
+            <p class="spot-tip">A piece of Talli makes the most meaningful souvenir.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ADVENTURE -->
+    <div class="acc-item">
+      <div class="acc-header" onclick="toggle(this)">
+        <div class="acc-header-left">
+          <div class="acc-icon icon-adventure">🪂</div>
+          <div>
+            <div class="acc-title">Adventure</div>
+            <div class="acc-subtitle">Thrills & outdoor experiences</div>
+          </div>
+        </div>
+        <span class="acc-arrow">&#8964;</span>
+      </div>
+      <div class="acc-body">
+        <div class="spots">
+          <div class="spot-card">
+            <h3>Gravity Indoor Skydiving</h3>
+            <p>Bahrain's wind tunnel experience — the closest thing to freefall without jumping out of a plane. Great for all ages and levels.</p>
+            <p class="spot-tip">Book in advance — slots fill up fast on weekends.</p>
+          </div>
+          <div class="spot-card">
+            <h3>Horse Riding</h3>
+            <p>Ride through Bahrain's desert landscape — several stables offer guided rides at sunrise or sunset across open terrain.</p>
+            <p class="spot-tip">Early morning rides are cooler and the desert light is beautiful.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FOOD -->
+    <div class="acc-item">
+      <div class="acc-header" onclick="toggle(this)">
+        <div class="acc-header-left">
+          <div class="acc-icon icon-food">🍽️</div>
+          <div>
+            <div class="acc-title">Traditional Food</div>
+            <div class="acc-subtitle">Authentic Bahraini dishes you must try</div>
+          </div>
+        </div>
+        <span class="acc-arrow">&#8964;</span>
+      </div>
+      <div class="acc-body">
+        <div class="spots">
+          <div class="food-card">
+            <h3>Haji</h3>
+            <div class="arabic">حاجي</div>
+            <p>A beloved Bahraini breakfast dish — slow-cooked meat served with light bread. Best found in old Manama's traditional restaurants early in the morning.</p>
+          </div>
+          <div class="food-card">
+            <h3>Jareesh</h3>
+            <div class="arabic">جريش</div>
+            <p>Crushed wheat cooked slowly with spices and sometimes meat — a deeply comforting dish that has been eaten in the Gulf for centuries.</p>
+          </div>
+          <div class="food-card">
+            <h3>Baba Taher</h3>
+            <div class="arabic">بابا طاهر</div>
+            <p>A classic Bahraini sweet — soft, syrup-soaked dough balls dusted with sesame. Found at traditional bakeries and street stalls across Manama.</p>
+          </div>
+          <div class="food-card">
+            <h3>Emmawash</h3>
+            <div class="arabic">إماواش</div>
+            <p>A traditional Bahraini fish dish cooked in a rich spiced tomato sauce, served over rice. A true taste of the island's coastal heritage.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="back-section">
+    <a href="index.html" class="back-btn">← back to all destinations</a>
+  </div>
+
+  <footer>
+    <div class="social-links">
+      <a href="https://www.instagram.com/ataraxia.guide/">Instagram</a>
+      <a href="mailto:youremail@gmail.com">Contact</a>
+    </div>
+    <p>© 2026 Ataraxia — Your Travel Encyclopedia</p>
+  </footer>
+
+  <script>
+    function toggle(header) {
+      const item = header.parentElement;
+      item.classList.toggle('open');
+    }
+  </script>
+
+</body>
+</html>
