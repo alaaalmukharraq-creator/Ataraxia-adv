@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-f8" />
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Hidden Manama — Ataraxia</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Segoe UI', sans-serif; color: #FFFFFF; background: #64a6bd; }
+    body { font-family: 'Segoe UI', sans-serif; color: #222; background: #fff; }
 
     nav {
       display: flex; align-items: center; justify-content: space-between;
@@ -15,10 +15,24 @@
     }
     .nav-logo { font-size: 22px; font-weight: 700; color: #3d8a5a; letter-spacing: 2px; text-decoration: none; }
     .nav-links { display: flex; gap: 28px; }
-    .nav-links a { font-size: 13px; color: #EFE6E6; text-decoration: none; }
+    .nav-links a { font-size: 13px; color: #555; text-decoration: none; }
     .nav-links a:hover { color: #3d8a5a; }
 
-    .hero { background: #1a4a5a; padding: 72px 40px; text-align: center; }
+.hero { 
+  background-image: url('Manama.jpg');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  padding: 72px 40px; 
+  text-align: center; 
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(26, 74, 90, 0.65);
+}
+.hero-label, .hero h1, .hero p { position: relative; z-index: 1; }
     .hero-label { font-size: 11px; letter-spacing: 3px; color: #a0c8d8; text-transform: uppercase; margin-bottom: 12px; }
     .hero h1 { font-size: 42px; font-weight: 700; color: #fff; margin-bottom: 12px; }
     .hero p { font-size: 15px; color: #a0c8d8; max-width: 520px; margin: 0 auto; line-height: 1.7; }
@@ -34,20 +48,15 @@
     .acc-item { border: 1px solid #e8e8e8; border-radius: 12px; margin-bottom: 12px; overflow: hidden; }
 
     .acc-header {
-    display: flex; align-items: center; justify-content: space-between;
-    padding: 0; cursor: pointer; background: #fff; transition: background 0.2s;
-    position: relative; overflow: hidden; min-height: 90px;
-  }
-    .acc-header:hover { background: #f7faf8; }
-    .acc-header-inner {
-      position: relative; z-index: 2;
       display: flex; align-items: center; justify-content: space-between;
-      width: 100%; padding: 20px 22px;
+      padding: 18px 22px; cursor: pointer; background: #fff; transition: background 0.2s;
     }
+    .acc-header:hover { background: #f7faf8; }
     .acc-header-left { display: flex; align-items: center; gap: 14px; }
-    .acc-icon { width: 38px; height: 38px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0; background: rgba(255,255,255,0.15); }
-    .acc-title { font-size: 17px; font-weight: 700; color: #222; }
-    .acc-subtitle { font-size: 12px; color: #FFFFFF; margin-top: 2px; }
+    
+
+    .acc-title { font-size: 16px; font-weight: 700; color: #222; }
+    .acc-subtitle { font-size: 12px; color: #777; margin-top: 2px; }
     .acc-arrow { font-size: 20px; color: #3d8a5a; transition: transform 0.3s; display: inline-block; }
     .acc-item.open .acc-arrow { transform: rotate(180deg); }
 
@@ -118,12 +127,11 @@
     <!-- FORTS -->
     <div class="acc-item">
       <div class="acc-header" onclick="toggle(this)">
-        <div class="acc-header-inner">
-          <div class="acc-header-left">
-            <div><div class="acc-title">Forts</div><div class="acc-subtitle">Ancient fortresses & UNESCO heritage</div></div>
-          </div>
-          <span class="acc-arrow">&#8964;</span>
+        <div class="acc-header-left">
+          
+          <div><div class="acc-title">Forts</div><div class="acc-subtitle">Ancient fortresses & UNESCO heritage</div></div>
         </div>
+        <span class="acc-arrow">&#8964;</span>
       </div>
       <div class="acc-body">
         <div class="spots">
@@ -141,11 +149,11 @@
           </div>
           <div class="spot-card">
             <img src="Bu-Maher.jpeg" alt="Qalaat Bu Maher" class="spot-photo"/>
-            <div class="spot-body"><h3>Qalaat Bu Maher</h3><p>A lesser known coastal fort in Muharraq — partially submerged at high tide, giving it an almost mythical appearance.</p><p class="spot-tip">Boat trips to be arranged by Bahrain National Museum.</p></div>
+            <div class="spot-body"><h3>Qalaat Bu Maher</h3><p>A coastal fort in Muharraq partially submerged at high tide, giving it an almost mythical appearance. Accessible only by boat from Bahrain National Museum.</p><p class="spot-tip">Ask at the museum about boat trips — it's worth every minute.</p></div>
           </div>
           <div class="spot-card">
             <img src="museum.jpg" alt="Bahrain National Museum" class="spot-photo"/>
-            <div class="spot-body"><h3>Bahrain National Museum</h3><p>The museum houses artefacts from Dilmun civilisation and brings Bahrain's ancient story to life beautifully.</p><p class="spot-tip">Spend at least 2 hours here — there's more than you'd expect.</p></div>
+            <div class="spot-body"><h3>Bahrain National Museum</h3><p>The museum houses artefacts from Dilmun civilisation and brings Bahrain's ancient story to life beautifully — and is the starting point for the Bu Maher boat ride.</p><p class="spot-tip">Spend at least 2 hours here — there's more than you'd expect.</p></div>
           </div>
         </div>
       </div>
@@ -154,12 +162,11 @@
     <!-- NATURE -->
     <div class="acc-item">
       <div class="acc-header" onclick="toggle(this)">
-        <div class="acc-header-inner">
-          <div class="acc-header-left">
-            <div><div class="acc-title">Nature</div><div class="acc-subtitle">Desert wonders & natural landmarks</div></div>
-          </div>
-          <span class="acc-arrow">&#8964;</span>
+        <div class="acc-header-left">
+          
+          <div><div class="acc-title">Nature</div><div class="acc-subtitle">Desert wonders & natural landmarks</div></div>
         </div>
+        <span class="acc-arrow">&#8964;</span>
       </div>
       <div class="acc-body">
         <div class="spots">
@@ -182,12 +189,11 @@
     <!-- CRAFTS -->
     <div class="acc-item">
       <div class="acc-header" onclick="toggle(this)">
-        <div class="acc-header-inner">
-          <div class="acc-header-left">
-            <div><div class="acc-title">Crafts</div><div class="acc-subtitle">Pottery, weaving & traditional arts</div></div>
-          </div>
-          <span class="acc-arrow">&#8964;</span>
+        <div class="acc-header-left">
+          
+          <div><div class="acc-title">Crafts</div><div class="acc-subtitle">Pottery, weaving & traditional arts</div></div>
         </div>
+        <span class="acc-arrow">&#8964;</span>
       </div>
       <div class="acc-body">
         <div class="spots">
@@ -197,7 +203,7 @@
           </div>
           <div class="spot-card">
             <img src="Naseej.jpg" alt="Alnaseej Textile Factory" class="spot-photo"/>
-            <div class="spot-body"><h3>Alnaseej Textile Factory</h3><p>One of Bahrain's most treasured cultural landmarks — a traditional textile factory in Muharraq where craftsmen weave fabric on ancient wooden looms.</p><p class="spot-tip">Go on a weekday morning to see the weavers actively working.</p></div>
+            <div class="spot-body"><h3>Alnaseej Textile Factory</h3><p>A traditional textile factory in Muharraq where craftsmen weave fabric on ancient wooden looms. A living piece of Bahraini heritage.</p><p class="spot-tip">Go on a weekday morning to see the weavers actively working.</p></div>
           </div>
         </div>
       </div>
@@ -206,17 +212,16 @@
     <!-- ADVENTURE & SPORTS -->
     <div class="acc-item">
       <div class="acc-header" onclick="toggle(this)">
-        <div class="acc-header-inner">
-          <div class="acc-header-left">
-            <div><div class="acc-title">Adventure & Sports</div><div class="acc-subtitle">Thrills, outdoor experiences & activities</div></div>
-          </div>
-          <span class="acc-arrow">&#8964;</span>
+        <div class="acc-header-left">
+          
+          <div><div class="acc-title">Adventure & Sports</div><div class="acc-subtitle">Thrills, outdoor experiences & activities</div></div>
         </div>
+        <span class="acc-arrow">&#8964;</span>
       </div>
       <div class="acc-body">
         <div class="spots">
           <div class="spot-card">
-            <img src="Gravity.jpeg" alt="Gravity Indoor Skydiving" class="spot-photo"/>
+            <img src="Gravity.jpeg" alt="Gravity" class="spot-photo"/>
             <div class="spot-body"><h3>Gravity Indoor Skydiving</h3><p>Bahrain's wind tunnel experience — the closest thing to freefall without jumping out of a plane. Great for all ages.</p><p class="spot-tip">Book in advance — slots fill up fast on weekends.</p></div>
           </div>
           <div class="spot-card">
@@ -228,8 +233,8 @@
             <div class="spot-body"><h3>Cycling</h3><p>Bahrain has a growing cycling scene with dedicated tracks and open coastal roads.</p><p class="spot-tip">Sheikh Nasser Loop in Zallaq is the most scenic route — flat, coastal and stunning at golden hour.</p></div>
           </div>
           <div class="spot-card">
-            <img src="sup.jpeg" alt="Kayaking" class="spot-photo"/>
-            <div class="spot-body"><h3>Kayaking & SUP</h3><p>Paddle through Bahrain's calm coastal waters and mangroves, or try stand up paddleboarding on the flat, calm sea.</p><p class="spot-tip">The mangroves in Tubli Bay are stunning to kayak through. Sunset SUP sessions are a must.</p></div>
+            <img src="sup.jpeg" alt="Kayaking & SUP" class="spot-photo"/>
+            <div class="spot-body"><h3>Kayaking & SUP</h3><p>Paddle through Bahrain's calm coastal waters and mangroves, or try stand up paddleboarding on the flat calm sea.</p><p class="spot-tip">The mangroves in Tubli Bay are stunning. Sunset SUP sessions are a must.</p></div>
           </div>
           <div class="spot-card">
             <img src="boatrides.jpg" alt="Boat Rides" class="spot-photo"/>
@@ -237,47 +242,46 @@
           </div>
           <div class="spot-card">
             <img src="F1.jpg" alt="Go Karting & F1" class="spot-photo"/>
-            <div class="spot-body"><h3>Go Karting & F1 Circuit</h3><p>Bahrain has world class karting facilities near the iconic F1 circuit. Great for a competitive day out with friends or family.</p><p class="spot-tip">Bahrain International Circuit also offers karting experiences on race weekends.</p></div>
+            <div class="spot-body"><h3>Go Karting & F1 Circuit</h3><p>World class karting facilities near the iconic F1 circuit. Great for a competitive day out with friends or family.</p><p class="spot-tip">Bahrain International Circuit offers karting on race weekends.</p></div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- TRADITIONAL FOOD -->
+    <!-- TRADITIONAL RESTAURANTS -->
     <div class="acc-item">
       <div class="acc-header" onclick="toggle(this)">
-        <div class="acc-header-inner">
-          <div class="acc-header-left">
-            <div><div class="acc-title">Traditional Food</div><div class="acc-subtitle">Authentic Bahraini dishes you must try</div></div>
-          </div>
-          <span class="acc-arrow">&#8964;</span>
+        <div class="acc-header-left">
+          
+          <div><div class="acc-title">Traditional Restaurants</div><div class="acc-subtitle">Where locals go for an authentic Bahraini meal</div></div>
         </div>
+        <span class="acc-arrow">&#8964;</span>
       </div>
       <div class="acc-body">
         <div class="spots">
           <div class="food-card">
             <img src="Hajicafe.jpg" alt="Haji" class="food-photo"/>
-            <div class="food-body"><h3>Haji</h3><div class="arabic">حاجي</div><p>A beloved Bahraini breakfast corner — Best found in old Manama's traditional restaurants early in the morning.</p></div>
+            <div class="food-body"><h3>Haji</h3><div class="arabic">حاجي</div><p>A legendary Bahraini breakfast institution in old Manama. Locals have been coming here for generations for slow-cooked meat dishes served with freshly baked bread in an unpretentious, no-frills setting.</p></div>
           </div>
           <div class="food-card">
             <img src="jareesh.jpg" alt="Jareesh" class="food-photo"/>
-            <div class="food-body"><h3>Jareesh</h3><div class="arabic">جريش</div><p> A deeply comforting place with multiple dishes that has been eaten in the Gulf for centuries.</p></div>
+            <div class="food-body"><h3>Jareesh</h3><div class="arabic">جريش</div><p>A traditional Bahraini restaurant specialising in hearty, slow-cooked Gulf dishes. The kind of place where recipes have been passed down through families and every meal feels homemade.</p></div>
           </div>
           <div class="food-card">
             <img src="babataher.jpg" alt="Baba Taher" class="food-photo"/>
-            <div class="food-body"><h3>Baba Taher</h3><div class="arabic">بابا طاهر</div><p>A classic Bahraini restraunt — local, humble setting & old local people. Found at strategic street ins Manama.</p></div>
+            <div class="food-body"><h3>Baba Taher</h3><div class="arabic">بابا طاهر</div><p>A beloved old-school Bahraini bakery and sweet shop. Famous for its fresh pastries and traditional Bahraini sweets, it's a neighbourhood staple that has stood the test of time.</p></div>
           </div>
           <div class="food-card">
             <img src="emmawash.jpg" alt="Emmawash" class="food-photo"/>
-            <div class="food-body"><h3>Emmawash</h3><div class="arabic">إموش</div><p>A traditional Bahraini place for delicious breakfast. A true taste of the island's coastal heritage.</p></div>
+            <div class="food-body"><h3>Emmawash</h3><div class="arabic">إماواش</div><p>A traditional Bahraini seafood restaurant rooted in the island's fishing heritage. Known for its rich, spiced fish dishes served over rice — a true taste of coastal Bahrain.</p></div>
           </div>
           <div class="food-card">
             <img src="darseencafe.jpg" alt="Darseen Cafe" class="food-photo"/>
-            <div class="food-body"><h3>Darseen Cafe</h3><div class="arabic">دارسين</div><p>A beloved Bahraini breakfast spot inside the National Museum — known for its cinnamon-infused drinks and traditional morning bites.</p></div>
+            <div class="food-body"><h3>Darseen Cafe</h3><div class="arabic">دارسين</div><p>A charming cafe nestled inside the Bahrain National Museum, known for its warm cinnamon-infused drinks and traditional Bahraini breakfast spread. A peaceful spot after exploring the museum.</p></div>
           </div>
           <div class="food-card">
             <img src="sharbetsaffron.jpg" alt="Sharbet Saffron" class="food-photo"/>
-            <div class="food-body"><h3>Sharbet Saffron Cafe</h3><div class="arabic">شربت زعفران</div><p>A traditional Bahraini breakfast cafe famous for its saffron drinks and classic morning dishes. A true local experience</p></div>
+            <div class="food-body"><h3>Sharbet Saffron Cafe</h3><div class="arabic">شربت زعفران</div><p>A well-loved Bahraini breakfast cafe with a loyal local following. Famous for its golden saffron drinks and traditional morning dishes that have made it a daily ritual for many Bahrainis.</p></div>
           </div>
         </div>
       </div>
@@ -286,12 +290,11 @@
     <!-- CAFES & MARKETS -->
     <div class="acc-item">
       <div class="acc-header" onclick="toggle(this)">
-        <div class="acc-header-inner">
-          <div class="acc-header-left">
-            <div><div class="acc-title">Cafes & Markets</div><div class="acc-subtitle">Local favourites & hidden gems</div></div>
-          </div>
-          <span class="acc-arrow">&#8964;</span>
+        <div class="acc-header-left">
+          
+          <div><div class="acc-title">Cafes & Markets</div><div class="acc-subtitle">Local favourites & hidden gems</div></div>
         </div>
+        <span class="acc-arrow">&#8964;</span>
       </div>
       <div class="acc-body">
         <div class="spots">
