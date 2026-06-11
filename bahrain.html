@@ -34,13 +34,11 @@
     .acc-item { border: 1px solid #e8e8e8; border-radius: 12px; margin-bottom: 12px; overflow: hidden; }
 
     .acc-header {
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 0; cursor: pointer; background: #fff; transition: opacity 0.2s;
-      position: relative; overflow: hidden; min-height: 90px;
-    }
-    .acc-header:hover { opacity: 0.93; }
-    .acc-cover { position: absolute; inset: 0; background-size: cover; background-position: center; z-index: 0; }
-    .acc-cover-overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.52); z-index: 1; }
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0; cursor: pointer; background: #fff; transition: background 0.2s;
+    position: relative; overflow: hidden; min-height: 90px;
+  }
+    .acc-header:hover { background: #f7faf8; }
     .acc-header-inner {
       position: relative; z-index: 2;
       display: flex; align-items: center; justify-content: space-between;
@@ -48,9 +46,9 @@
     }
     .acc-header-left { display: flex; align-items: center; gap: 14px; }
     .acc-icon { width: 38px; height: 38px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0; background: rgba(255,255,255,0.15); }
-    .acc-title { font-size: 17px; font-weight: 700; color: #fff; }
-    .acc-subtitle { font-size: 12px; color: rgba(255,255,255,0.75); margin-top: 2px; }
-    .acc-arrow { font-size: 20px; color: #fff; transition: transform 0.3s; display: inline-block; }
+    .acc-title { font-size: 17px; font-weight: 700; color: #222; }
+    .acc-subtitle { font-size: 12px; color: #777; margin-top: 2px; }
+    .acc-arrow { font-size: 20px; color: #3d8a5a; transition: transform 0.3s; display: inline-block; }
     .acc-item.open .acc-arrow { transform: rotate(180deg); }
 
     .acc-body { display: none; padding: 20px 22px 22px; border-top: 1px solid #e8e8e8; }
@@ -122,7 +120,6 @@
       <div class="acc-header" onclick="toggle(this)">
         <div class="acc-header-inner">
           <div class="acc-header-left">
-            <div class="acc-icon">🏰</div>
             <div><div class="acc-title">Forts</div><div class="acc-subtitle">Ancient fortresses & UNESCO heritage</div></div>
           </div>
           <span class="acc-arrow">&#8964;</span>
@@ -157,11 +154,8 @@
     <!-- NATURE -->
     <div class="acc-item">
       <div class="acc-header" onclick="toggle(this)">
-        <div class="acc-cover" style="background-image:url('nature.jpg')"></div>
-        <div class="acc-cover-overlay"></div>
         <div class="acc-header-inner">
           <div class="acc-header-left">
-            <div class="acc-icon">🌳</div>
             <div><div class="acc-title">Nature</div><div class="acc-subtitle">Desert wonders & natural landmarks</div></div>
           </div>
           <span class="acc-arrow">&#8964;</span>
@@ -188,11 +182,8 @@
     <!-- CRAFTS -->
     <div class="acc-item">
       <div class="acc-header" onclick="toggle(this)">
-        <div class="acc-cover" style="background-image:url('craft.jpg')"></div>
-        <div class="acc-cover-overlay"></div>
         <div class="acc-header-inner">
           <div class="acc-header-left">
-            <div class="acc-icon">🏺</div>
             <div><div class="acc-title">Crafts</div><div class="acc-subtitle">Pottery, weaving & traditional arts</div></div>
           </div>
           <span class="acc-arrow">&#8964;</span>
@@ -215,11 +206,8 @@
     <!-- ADVENTURE & SPORTS -->
     <div class="acc-item">
       <div class="acc-header" onclick="toggle(this)">
-        <div class="acc-cover" style="background-image:url('adventures.jpg')"></div>
-        <div class="acc-cover-overlay"></div>
         <div class="acc-header-inner">
           <div class="acc-header-left">
-            <div class="acc-icon">🪂</div>
             <div><div class="acc-title">Adventure & Sports</div><div class="acc-subtitle">Thrills, outdoor experiences & activities</div></div>
           </div>
           <span class="acc-arrow">&#8964;</span>
@@ -258,11 +246,8 @@
     <!-- TRADITIONAL FOOD -->
     <div class="acc-item">
       <div class="acc-header" onclick="toggle(this)">
-        <div class="acc-cover" style="background-image:url('tradfood.jpg')"></div>
-        <div class="acc-cover-overlay"></div>
         <div class="acc-header-inner">
           <div class="acc-header-left">
-            <div class="acc-icon">🍽️</div>
             <div><div class="acc-title">Traditional Food</div><div class="acc-subtitle">Authentic Bahraini dishes you must try</div></div>
           </div>
           <span class="acc-arrow">&#8964;</span>
@@ -301,11 +286,8 @@
     <!-- CAFES & MARKETS -->
     <div class="acc-item">
       <div class="acc-header" onclick="toggle(this)">
-        <div class="acc-cover" style="background-image:url('Farmersmarket.jpg')"></div>
-        <div class="acc-cover-overlay"></div>
         <div class="acc-header-inner">
           <div class="acc-header-left">
-            <div class="acc-icon">☕</div>
             <div><div class="acc-title">Cafes & Markets</div><div class="acc-subtitle">Local favourites & hidden gems</div></div>
           </div>
           <span class="acc-arrow">&#8964;</span>
