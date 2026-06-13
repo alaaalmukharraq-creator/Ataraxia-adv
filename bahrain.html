@@ -71,9 +71,9 @@
     .spot-body p { font-size: 12px; color: #666; line-height: 1.6; }
     .spot-tip { margin-top: 10px; font-size: 11px; color: #3d8a5a; border-left: 2px solid #3d8a5a; padding-left: 8px; line-height: 1.5; }
 
-    .food-card { border: 1px solid #cce5d6; border-radius: 10px; overflow: hidden; background: #f7faf8; }
+    .food-card { border: 1px solid #cce5d6; border-radius: 10px; overflow: hidden; background: #f7faf8; display: flex; flex-direction: column; }
     .food-photo { width: 100%; height: 130px; object-fit: cover; display: block; }
-    .food-body { padding: 14px 16px; }
+    .food-body { padding: 14px 16px; display: flex; flex-direction: column; flex: 1; }
     .food-body h3 { font-size: 15px; font-weight: 600; color: #1a4a2a; margin-bottom: 3px; }
     .food-body .arabic { font-size: 12px; color: #3d8a5a; margin-bottom: 8px; }
     .food-body p { font-size: 12px; color: #555; line-height: 1.6; }
@@ -270,13 +270,13 @@
         <div class="sub-label">Breakfast</div>
         <div class="spots">
           <div class="food-card">
-            <div class="food-body"><h3>Hajis</h3><div class="arabic">حاجي</div><p>A legendary Bahraini breakfast institution in old Manama. Locals have been coming here for generation.</p><a href="https://www.instagram.com/hajiscafe/" class="ig-link">@hajiscafe</a></div>
+            <div class="food-body"><h3>Hajis</h3><div class="arabic">حاجي</div><p>A legendary Bahraini breakfast institution in old Manama. Locals have been coming here for generations.</p><a href="https://www.instagram.com/hajiscafe/" class="ig-link">@hajiscafe</a></div>
           </div>
           <div class="food-card">
-            <div class="food-body"><h3>Danet AlTawawish Restaurant & Cafe</h3><div class="arabic">دانة الطواويش</div><p>A traditional Bahraini restaurant specialising in the heart of Manama. The kind of place where recipes have been passed down through families and every meal feels homemade — Must try their Mahyawa bread with cheese (مهياوة وجبن).</p> <a href="https://maps.app.goo.gl/nwJRK8hteFKuappp6" class="ig-link"><i>📍</i> View on Google Maps</a>
+            <div class="food-body"><h3>Danet AlTawawish Restaurant & Cafe</h3><div class="arabic">دانة الطواويش</div><p>A traditional Bahraini restaurant in the heart of Manama. The kind of place where recipes have been passed down through families and every meal feels homemade — must try their Mahyawa bread with cheese (مهياوة وجبن).</p><a href="https://maps.app.goo.gl/nwJRK8hteFKuappp6" class="ig-link">📍 View on Google Maps</a></div>
           </div>
           <div class="food-card">
-            <div class="food-body"><h3>Baba Taher</h3><div class="arabic">بابا طاهر</div><p>A beloved old-school Bahraini bakery and sweet shop. Famous for its fresh pastries and traditional Bahraini sweets, it's a neighbourhood staple that has stood the test of time.</p><a href="https://www.instagram.com/baba_taher_restaurant/" class="ig-link">@baba_taher_restaurant </a></div>
+            <div class="food-body"><h3>Baba Taher</h3><div class="arabic">بابا طاهر</div><p>A beloved old-school Bahraini bakery and sweet shop. Famous for its fresh pastries and traditional Bahraini sweets, it's a neighbourhood staple that has stood the test of time.</p><a href="https://www.instagram.com/baba_taher_restaurant/" class="ig-link">@baba_taher_restaurant</a></div>
           </div>
           <div class="food-card">
             <div class="food-body"><h3>Emmawash</h3><div class="arabic">إموش</div><p>A traditional Bahraini seafood restaurant rooted in the island's fishing heritage. Known for its rich, spiced fish dishes served over rice — a true taste of coastal Bahrain.</p><a href="https://www.instagram.com/emmawash_bh/" class="ig-link">@emmawash_bh</a></div>
@@ -295,7 +295,8 @@
             <div class="food-body"><h3>Tren Tren</h3><p>One of Bahrain's most celebrated grill spots, best known for their Riyash — juicy, perfectly charred lamb chops that keep people coming back. A must for any serious meat lover.</p><p class="spot-tip">The Riyash is the star — don't leave without ordering it.</p><a href="https://www.instagram.com/trentren.bh/" class="ig-link">@trentren.bh</a></div>
           </div>
           <div class="food-card">
-            <div class="food-body"><h3>Bu Jamal</h3><p>A beloved grill institution in Riffa with a loyal local following. Their tikka is famously juicy, and the spicy yogurt tikka is a standout dish you won't find done better elsewhere. They serve much more than just tikka too.</p><p class="spot-tip">Ask for the spicy yogurt tikka — it's the one to order.</p> <a href="https://maps.app.goo.gl/uKeFzPsKLkKSi2vm6" class="ig-link"><i>📍</i> View on Google Maps</a> 
+            <div class="food-body"><h3>Bu Jamal</h3><p>A beloved grill institution in Riffa with a loyal local following. Their tikka is famously juicy, and the spicy yogurt tikka is a standout dish you won't find done better elsewhere. They serve much more than just tikka too.</p><p class="spot-tip">Ask for the spicy yogurt tikka — it's the one to order.</p><a href="https://maps.app.goo.gl/uKeFzPsKLkKSi2vm6" class="ig-link">📍 View on Google Maps</a></div>
+          </div>
           <div class="food-card">
             <div class="food-body"><h3>BBQ Town</h3><p>A one-of-a-kind outdoor dining experience in Bilad Al Qadeem — part garden restaurant, part food village. Multiple cuisines, family indoor and outdoor seating, a perfume shop, and a main kitchen serving everything from kebabs and burgers to noodles and pasta. Their Rughab (رقبة) — neck meat slow-cooked in BBQ sauce — is buttery, tender and unforgettable.</p><p class="spot-tip">Go with a group so you can try as many dishes as possible.</p><a href="https://www.instagram.com/bbq_.town/" class="ig-link">@bbq_.town</a></div>
           </div>
